@@ -12,27 +12,38 @@
     <header>
 
       <nav class="navigatiebalk" class="section-content">
-        <a href ="#" class="nav-logo">
-          <h2 class ="logo-text">⚗️Rick and Morty </h2>
-        </a>
+        <h2 class ="logo-text">⚗️Rick and Morty </h2>
         <ul class="nav-menu"> 
-          <li class="nav-item">
-            <a href ="#" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href ="#" class="nav-link">Favorieten</a>
-          </li>
-          <li class="nav-item">
-            <a href ="#" class="nav-link">Personages</a>
-          </li>
-
+          <li class="nav-item"><a href ="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href ="#" class="nav-link">Favorieten</a></li>
+          <li class="nav-item"><a href ="#" class="nav-link">Personages</a></li>
         </ul>
-
       </nav>
 
+      <section class="search-bar section content">
+        <input type="text" id="searchInput" placeholder="Zoek personage..."/>
+        <select id="statusFilter">
+          <option value="">Alle status</option>
+          <option value="Alive">Levend</option>
+          <option value="Dead">Dood</option>
+          <option value="Unknown">Onbekend</option>
+        </select>
+        <select id="speciesFilter">
+          <option value="">Alle soorten</option>
+          <option value="Human">Mens</option>
+          <option value="Alien">Alien</option>
+          <option value="Robot">Robot</option>
+        </select>
+        <button id="searchbutton">Zoeken</button>
+      </section>
     </header>
 
     <main>
+   
+
+      <ul id= "resultaten"></ul>
+      <div id="paginatie"></div>
+
 
     </main>
 

@@ -1,15 +1,17 @@
 # Projectbeschrijving 
 
-# Functionaliteiten
+### Functionaliteiten
 
-# Gebruikte API's met links 
+### Gebruikte API's met links 
+**Rick and Morty API:**(https://rickandmortyapi.com/documentation/#episode-schema) 
 
-# Implementatie van technische vereisten 
+### Implementatie van technische vereisten 
 
-# Installatiehandleiding 
+### Installatiehandleiding 
 
-# Screenshots van de applicatie 
+### Screenshots van de applicatie 
 
-# Bronnen 
+## Bronnen: 
+[naam van de site](link)
 
 

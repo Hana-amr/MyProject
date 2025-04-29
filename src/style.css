@@ -38,6 +38,10 @@ img {
 /*Navigatie balk*/
 
 header {
+  position: fixed;
+
+  width: 100%;
+  z-index: 5;
   background-color: lightblue;
 
 }
@@ -101,4 +105,45 @@ header .navigatiebalk{
 .search-bar button:hover{
   background-color: lightblue;
  
+}
+
+/*Homepage*/
+.homepage {
+  min-height: 100vh;
+  background-color: lightblue;
+}
+
+.homepage .section-content  {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+
+.homepage .details .titel {
+  font-size: 3rem;
+  color:darkblue;
+  font-family:"Minerv", sans-serif; /*HIER NOG KIEZEN*/
+}
+
+.homepage .details .tussentitel {
+  margin-top: 8px;
+  max-width:70%;
+  font-weight: 600;
+  font-size:2rem;
+}
+
+.homepage .details .descriptie {
+  max-width: 70%;
+  margin: 24px 0 40px;
+  font-size: 1.12rem;
+}
+
+
+.homepage .portaalRickyandMorty {
+  max-width: 500px;
+  margin-right: 30px;
 }

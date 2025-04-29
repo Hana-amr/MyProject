@@ -49,7 +49,7 @@ header .navigatiebalk{
   padding: 20px;
 }
 
-.navigatiebalk .nav-logo .text-logo {
+.navigatiebalk .logo-text {
   color:white;
   font-size:2rem;
   font-weight: 600;
@@ -72,6 +72,33 @@ header .navigatiebalk{
   color: darkblue;
   background-color:white;
 
+}
 
+/*Zoekbalk*/
 
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  justify-content: center;
+  padding:20px;
+  background-color: lightblue;
+}
+
+.search-bar input, .search-bar select, .search-bar button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  background-color: darkblue;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover{
+  background-color: lightblue;
+ 
 }

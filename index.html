@@ -8,13 +8,14 @@
     <title>Rick and Morty interactieve single-page webapplicatie</title>
   </head>
   <body>
-    <!-- Header/ Navigatiebalk-->
+    <!-- Header: Navigatiebalk en Zoekbalk-->
     <header>
 
       <nav class="navigatiebalk" class="section-content">
         <h2 class ="logo-text">⚗️Rick and Morty </h2>
         <ul class="nav-menu"> 
           <li class="nav-item"><a href ="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href ="#" class="nav-link">About</a></li>
           <li class="nav-item"><a href ="#" class="nav-link">Favorieten</a></li>
           <li class="nav-item"><a href ="#" class="nav-link">Personages</a></li>
         </ul>
@@ -39,20 +40,36 @@
     </header>
 
     <main>
+      <!--Home page-->
+      <section class="homepage">
+        <div class="section-content">
+          <div class="details">
+            <h2 class="titel">Ricky and Morty</h2>
+            <h3 class="tussentitel">Ontdek, filter en verzamel!</h3>
+            <p class="descriptie">Stap in een portaal naar het Rick and Morty-universum! Zoek, filter en verzamel je favoriete personages - zonder dat je de realiteit hoeft te breken.</p>
+
+            <div class="portaalRickyandMorty">
+              <img src="https://wallpapers.com/images/featured/cool-rick-and-morty-2qy1xyshw0h9uxk4.jpg" alt="portaal" class="portaal-image">
+            </div>
+          </div>
+        </div>
+      </section>
+
    
+
+
+
+
+
+
+
+
 
       <ul id= "resultaten"></ul>
       <div id="paginatie"></div>
 
 
     </main>
-
-
-
-
-
-
-
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

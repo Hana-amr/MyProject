@@ -12,6 +12,6 @@
 ### Screenshots van de applicatie 
 
 ## Bronnen: 
-[naam van de site](link)
+[naam van de site] (link)
 
 

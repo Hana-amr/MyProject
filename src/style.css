@@ -31,6 +31,24 @@ button {
   max-width: 1300px;
 }
 
+.section-title {
+  text-align: center;
+  padding:60px 0 100px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.section-title::after {
+  content:"";
+  width:90px;
+  height: 5px;
+  margin: 10px auto 0;
+  display: block;
+  border-radius: 8px;
+  background-color: darkblue;
+
+}
+
 /*Navigatie balk*/
 
 header {
@@ -145,8 +163,34 @@ header .navigatiebalk{
 /*About*/ 
 
 
+.about-section {
+  padding:120px 0;
+  background-color: white;
+}
 
+.tekst {
+  background-color: lightblue;
+  border-radius: 25px;
+}
+.about-section .section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.about-section .about-image-wrapper .about-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-section .about-details .tekst {
+  line-height: 30px;
+  margin: 50px 0 50px;
+  text-align: center;
+  font-size: 1.12rem;
+}
 
 /*Tabel*/
 #personages {

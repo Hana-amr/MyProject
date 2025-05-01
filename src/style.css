@@ -150,12 +150,13 @@ header .navigatiebalk{
 /*Tabel*/
 #personages {
   margin-top: 20px;
+  color: white;
 
 }
 
  body .perso {
   padding: 20px;
-  background-color: #f4f4f4;
+  background-color: lightblue;
 }
 
 table {
@@ -180,6 +181,60 @@ img {
   border-radius: 50%;
   max-width: 50;
 }
+
+/*Kaartjes tonen*/
+body {
+  background-color: lightblue;
+}
+.card-slider {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.card {
+  min-width: 200px;
+  background-color: lightgreen;
+  border-radius: 10px;
+  padding: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 95%;
+  border-radius: 10px;
+}
+
+.scroll-button {
+  background-color: lightblue;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.kaartjes {
+  padding-left: 20px;
+  padding-top:50px;
+  padding-bottom: 20px;
+  color:white;
+}
+
+/*Favoriete kaartjes (sterretje)*/
 
 
 

@@ -4,33 +4,33 @@ Dit project is een interactieve single-page webapplicatie gebaseerd op de Rick a
 Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages.
 
 
-### Functionaliteiten
+## Functionaliteiten
 
-## Dataverzameling & -weergave (bestand main.js)
+### Dataverzameling & -weergave (bestand main.js)
 - Data wordt opgehaald via de officiële [Rick and Morty API](https://rickandmortyapi.com/api/character)
 - Minstens 20 personages worden opgehaald
 - Gegevens worden in zowel in een **tabel** als in een **kaartweergave** gepresenteerd.
 - Tabel toont: Afbeelding, Naam, Status Soort, Geslacht, Locatie.
 - Scrollbare kaartweergave met afbeeldingen en sterknoppen (voor favorieten)
 
-## Interactiviteit
+### Interactiviteit
 - **Filterfunctionaliteit:**(naam, status, soort en geslacht).
 - **Zoekfuntie:** Naam van de personage opzoeken.
 - **Sorteermogelijkheden:** Sorteer indirect via filters en selecties
 - Resulaten worden automatisch bijgewerkt op basis can zoek- / filtercriteria
 
-## Personalisatie
+### Personalisatie
 - Gebruikers kunnen **favorieten** opslaan via een sterknop op elk kaartje.
 - Favorieten worden **lokaal opgeslagen** in 'localStorage' en blijven behouden tussen sessies.
 - Wanneer je op menu-item "Favorieten" drukt krijg je je favoriete kaartjes te zien.
 
 
-### Gebruikte API's met links 
+## Gebruikte API's met links 
 **Rick and Morty API:**(https://rickandmortyapi.com/documentation/#episode-schema) 
 - **Personages:** (https://rickandmortyapi.com/api/character)
 
 
-### Implementatie van technische vereisten 
+## Implementatie van technische vereisten 
 
 
 - lijn 3: Haalt de waarde van de zoekbalk op en zet deze om naar kleine letters voor een case-insensitieve zoekfunctie. 
@@ -44,11 +44,11 @@ Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoe
 - Bij klikken op de favorieten link in het navigatiemenu, wordt de gebuiker naar de favorieten sectie geleid en woren de favorieten opnieuw geladen.
 - **addeventListener** wordt op meerdere plaatsen gebruikt om interactie met de pagina mogelijk te maken, zoals bij het klikken op de zoekknop, sterknoppen voor favorieten en de navigatieknoppen voor het scrollen.
 
-### Installatiehandleiding 
+## Installatiehandleiding 
 
 - Geen instalatie vereist, site gewoon in een moderne webbrowser openen.
 
-### Screenshots van de applicatie 
+## Screenshots van de applicatie 
 
 ## Bronnen: 
 [naam van de site] (link)

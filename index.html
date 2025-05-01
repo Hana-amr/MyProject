@@ -8,7 +8,7 @@
     <title>Rick and Morty interactieve single-page webapplicatie</title>
   </head>
   <body>
-    <!-- Header: Navigatiebalk en Zoekbalk-->
+    <!-- Header: Navigatiebalk-->
     <header>
 
       <nav class="navigatiebalk" class="section-content">
@@ -25,58 +25,25 @@
     </header>
 
     <main>
+        <!--Home page-->
+  <section class="homepage">
+    <div class="section-content">
 
-
-      <section class="search-bar section content">
-        <input type="text" id="searchInput" placeholder="Zoek personage..."/>
-        <select id="statusFilter">
-          <option value="">Alle status</option>
-          <option value="Alive">Levend</option>
-          <option value="Dead">Dood</option>
-          <option value="Unknown">Onbekend</option>
-        </select>
-        <select id="speciesFilter">
-          <option value="">Alle soorten</option>
-          <option value="Human">Mens</option>
-          <option value="Alien">Alien</option>
-        </select>
-
-        <select id="Gender">
-          <option value="">Alle geslachten</option>
-          <option value="Female">Vrouw</option>
-          <option value="Male">Man</option>
-        </select>
-
-        <button id="searchbutton">Zoeken</button>
-      </section>
-      
-      <!--Home page-->
-      <section class="homepage">
-        <div class="section-content">
-
-          <div class="details">
-            <h2 class="titel">Ricky and Morty</h2>
-            <h3 class="tussentitel">Ontdek, filter en verzamel!</h3>
-            <p class="descriptie">Stap in een portaal naar het Rick and Morty-universum!<br> Zoek, filter en verzamel je favoriete personages - zonder dat je de realiteit hoeft te breken.</p>
-          </div>
-            
-          <div class="portaalRickyandMorty">
-              <img src="/src/images/RickyandMortyportaal.png" alt="portaal" class="portaal-image" style="max-width: 80%;">
-            </div>
-          </div>
+      <div class="details">
+        <h2 class="titel">Rick and Morty</h2>
+        <h3 class="tussentitel">Ontdek, filter en verzamel!</h3>
+        <p class="descriptie">Stap in een portaal naar het Rick and Morty-universum!<br> Zoek, filter en verzamel je favoriete personages - zonder dat je de realiteit hoeft te breken.</p>
+      </div>
+        
+      <div class="portaalRickyandMorty">
+          <img src="/src/images/RickyandMortyportaal.png" alt="portaal" class="portaal-image" style="max-width: 80%;">
         </div>
-      </section>
-
-
-      <ul id= "resultaten"></ul>
-      <div id="paginatie"></div>
-
-     
-
-    </main>
+      </div>
+    </div>
+  </section>
 
     
-      <!--About kort tekstje misschien-->
+      <!--About-->
 
   <section class="about-section" >
     <div class="section-content">
@@ -85,19 +52,43 @@
       </div>
       <div class="about-details">
         <h2 class="section-title" id="about">About</h2>
-        <p class="tekst">Ben je fan van Rick and Morty? Dan zit je goed! 
-          Op deze site kun je eenvoudig door personages bladeren, 
-          filteren op naam of status, en je favoriete personages opslaan. 
-          Zo heb je altijd jouw favoriete kaarten bij de hand!</p>
+        <p class="tekst">Fan van Rick and Morty? Dan zit je op de juiste site! 
+          Blader door alle personages, filter op naam, status, soort of geslacht, 
+          en sla je favorieten op om ze altijd snel terug te vinden.</p>
       </div>
     </div>
   </section>
 
+  <!--Titel + zoekbalk-->
+
+  <h1 id="personages">Personages</h1>
 
 
-<!--Personages-->
+  <section class="search-bar section content">
+    <input type="text" id="searchInput" placeholder="Zoek personage..."/>
+    <select id="statusFilter">
+      <option value="">Alle status</option>
+      <option value="Alive">Levend</option>
+      <option value="Dead">Dood</option>
+      <option value="Unknown">Onbekend</option>
+    </select>
+    <select id="speciesFilter">
+      <option value="">Alle soorten</option>
+      <option value="Human">Mens</option>
+      <option value="Alien">Alien</option>
+    </select>
+
+    <select id="Gender">
+      <option value="">Alle geslachten</option>
+      <option value="Female">Vrouw</option>
+      <option value="Male">Man</option>
+    </select>
+
+    <button id="searchbutton">Zoeken</button>
+  </section>
+
+<!--Tabel Personages-->
 <div class="perso">
-<h1 id="personages">Personages</h1>
 <div id="character-container">
   <table id="character-table">
     <thead>
@@ -116,6 +107,7 @@
   </table>
 </div>
 </div>
+
    <!--Kaartjes toevoegen-->
 <h1 id ="kaartjes">Kaartjes</h1>
 <section class="card-slider">
@@ -128,7 +120,7 @@
 
 <h1 id="favorieten">Favorieten</h2>
 <div id="favorietenContainer">
-  <p id="geenFavorieten">Je hebt nog geen favorieten geselecteerd.</p>
+  <p id="geenFavorieten"><b>Nog geen favorieten! Voeg kaartjes toe om ze hier te zien.</b></p>
   <!-- Favoriete kaarten komen hier -->
 </div>
 

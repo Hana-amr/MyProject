@@ -64,16 +64,20 @@
         </div>
       </section>
 
+      <ul id= "resultaten"></ul>
+      <div id="paginatie"></div>
+
+     
+
+    </main>
+
+    
       <!--About kort tekstje misschien-->
 
-      <!--Dataverzameling en weergave
-      Haal data op van de API (API endpoint met minstens 20 op te halen objecten)
-Toon de data op een visueel aantrekkelijke manier: lijst/tabel (+ kaart of andere visuele weergave naargelang API)
-Zorg voor duidelijke details van de getoonde items (de lijstweergave toont minstens 6 kolommen)-->
-
-<h1>Ricky and Morty Personages</h1>
-<div>
-  <table>
+<div class="perso">
+<h1 id="personages">Personages</h1>
+<div id="character-container">
+  <table id="character-table">
     <thead>
       <tr>
         <th>Afbeelding</th>
@@ -84,30 +88,17 @@ Zorg voor duidelijke details van de getoonde items (de lijstweergave toont minst
         <th>Locatie</th>
       </tr>
     </thead>
-    <tbody id="tabel">
-
-
+    <tbody id="table-body">
+      <!-- Gegevens -->
     </tbody>
   </table>
 </div>
+</div>
    
-
-
-
-
-
-
-
-
-
-      <ul id= "resultaten"></ul>
-      <div id="paginatie"></div>
-
-      <hr>
-      <a href ="#top">back to Top</a><br>
-      <hr>
-    </main>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+  
+    <hr>
+    <a href ="#top">back to Top</a><br>
+    <hr>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>

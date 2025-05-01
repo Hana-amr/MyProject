@@ -1,6 +1,6 @@
 # Projectbeschrijving
 
-Dit project is een interactieve single-page webapplicatie gebaseerd op de [Ricky and Morty API]. De applicatie toont personages op een visueel aantrekkelijke tabel en kaartweergave. Gebruikers kunnen gegevens filteren op status, soort, geslacht en locatie via dropdownmenu’s. 
+Dit project is een interactieve single-page webapplicatie gebaseerd op de Ricky and Morty API. De applicatie toont personages op een visueel aantrekkelijke tabel en kaartweergave. Gebruikers kunnen gegevens filteren op status, soort en geslacht via dropdownmenu’s. 
 Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages.
 
 
@@ -16,6 +16,7 @@ Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoe
 - **Iteratie over een array met .forEach():** Alle personages worden één voor één verwerkt met behulp van .forEach() (regel 9).
 - **Foutafhandeling met .catch():** Eventuele fouten tijdens het ophalen van data worden opgevangen en weergegeven in de console (regel 24).
 
+## Interactiviteit
 
 ### Gebruikte API's met links 
 **Rick and Morty API:**(https://rickandmortyapi.com/documentation/#episode-schema) 

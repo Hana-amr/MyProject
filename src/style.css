@@ -78,46 +78,21 @@ header .navigatiebalk{
 }
 
 .navigatiebalk .nav-menu .nav-link {
-  color: white;
+ /* color: white;
   padding: 10px 18px;
   border-radius: 20px ;
-  font-size: 1.12rem;
+  font-size: 1.12rem;*/
+  color:white;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
   transition: 0.3s ease;
 }
 .navigatiebalk .nav-menu .nav-link:hover {
   color: darkblue;
   background-color:white;
-
 }
 
-/*Zoekbalk*/
-
-.search-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap:10px;
-  justify-content: center;
-  padding:20px;
-  background-color: lightblue;
-}
-
-.search-bar input, .search-bar select, .search-bar button {
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-.search-bar button {
-  background-color: darkblue;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.search-bar button:hover{
-  background-color: lightblue;
- 
-}
 
 /*Homepage*/
 .homepage {
@@ -138,7 +113,7 @@ header .navigatiebalk{
 .homepage .details .titel {
   font-size: 3rem;
   color:darkblue;
-  font-family:"Minerv", sans-serif; /*HIER NOG KIEZEN*/
+  font-family:"Libre Baskerville", sans-serif; 
 }
 
 .homepage .details .tussentitel {
@@ -192,11 +167,44 @@ header .navigatiebalk{
   font-size: 1.12rem;
 }
 
+/*Zoekbalk*/
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  justify-content: center;
+  padding:20px;
+  background-color: lightblue;
+}
+
+.search-bar input, .search-bar select, .search-bar button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px ;
+}
+
+.search-bar button {
+  background-color: lightgreen;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover{
+  background-color: lightgreen;}
+
 /*Tabel*/
 #personages {
   margin-top: 20px;
   color: white;
+  padding-left: 50px;
 
+}
+
+#character-container {
+  display: flex;
+  justify-content: center;
 }
 
  body .perso {
@@ -205,16 +213,17 @@ header .navigatiebalk{
 }
 
 table {
-  width: 100%;
+  width: 70%;
   border-collapse: collapse;
   background-color: white;
   margin-top: 20px;
 }
 
 th, td {
-  padding: 12px;
+  padding: 12px;;
   border: 1px solid #ddd;
   text-align: left;
+  align-items: center;
 }
 
 th {
@@ -263,6 +272,7 @@ body {
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
+  margin: 50px;
 }
 
 .card img {
@@ -332,11 +342,15 @@ body {
 
 #favorieten {
   padding: 20px;
+  margin-top: 50px;
   max-width: 100%;
   overflow-x: auto;
 }
 
-
+#geenFavorieten {
+  color:darkgrey;
+  align-items: center;
+}
 
 
 /*klein scherm*/

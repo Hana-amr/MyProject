@@ -44,29 +44,99 @@ window.addEventListener('load', () => {
   document.getElementById('searchbutton').click();
 });
 
-//kaartweergave
+/*kaartweergave + Favorieten met sterretje */
 const cardContainer = document.getElementById('cardContainer');
+const favorietenContainer = document.getElementById('favorietenContainer');
+const geenMelding = document.getElementById('geenFavorieten');
 
+let alleCharacters = [];
+
+//Data ophalen: Fetch alle personages bij pagina laden
 fetch('https://rickandmortyapi.com/api/character')
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
-    const characters = data.results;
-
-    characters.forEach(character => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-
-      card.innerHTML = `
-        <img src="${character.image}" alt="${character.name}">
-        <h3>${character.name}</h3>
-        <p>${character.species} - ${character.status}</p>
-      `;
-
-      cardContainer.appendChild(card);
-    });
+    alleCharacters = data.results;
+    toonAlleKaarten();
   });
 
-// Scroll functionaliteit
+// Toon alle kaarten in scrollbare container
+function toonAlleKaarten() {
+  cardContainer.innerHTML = '';
+  alleCharacters.forEach(character => {
+    const kaart = maakKaart(character);
+    cardContainer.appendChild(kaart);
+  });
+}
+
+// Maak een kaartje met sterknop
+function maakKaart(character) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const isFav = isFavorited(character.id);
+
+  card.innerHTML = `
+    <img src="${character.image}" alt="${character.name}">
+    <h3>${character.name}</h3>
+    <p>${character.species} - ${character.status}</p>
+    <button class="star-btn ${isFav ? 'favoriet' : ''}" data-id="${character.id}">
+      ★
+    </button>
+  `;
+
+  const starBtn = card.querySelector('.star-btn');
+  starBtn.addEventListener('click', () => toggleFavorite(character.id, starBtn));
+
+  return card;
+}
+
+// Check of ID in localStorage staat
+function isFavorited(id) {
+  const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+  return favs.includes(id);
+}
+
+// Voeg toe of verwijder uit favorieten
+function toggleFavorite(id, button) {
+  let favs = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  if (favs.includes(id)) {
+    favs = favs.filter(favId => favId !== id);
+    button.classList.remove('favoriet');
+  } else {
+    favs.push(id);
+    button.classList.add('favoriet');
+  }
+
+  localStorage.setItem('favorites', JSON.stringify(favs));
+}
+
+// Toont favorieten (bij klikken in menu)
+function laadFavorieten() {
+  favorietenContainer.innerHTML = '';
+
+  const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  if (favs.length === 0) {
+    geenMelding.style.display = 'block';
+    return;
+  }
+
+  geenMelding.style.display = 'none';
+
+  fetch(`https://rickandmortyapi.com/api/character/${favs.join(',')}`)
+    .then(res => res.json())
+    .then(data => {
+      const favoritesArray = Array.isArray(data) ? data : [data];
+
+      favoritesArray.forEach(character => {
+        const kaart = maakKaart(character);
+        favorietenContainer.appendChild(kaart);
+      });
+    });
+}
+
+// Scrollfunctionaliteit kaartjes
 document.getElementById('scrollLinks').addEventListener('click', () => {
   cardContainer.scrollBy({ left: -300, behavior: 'smooth' });
 });
@@ -75,4 +145,10 @@ document.getElementById('scrollRechts').addEventListener('click', () => {
   cardContainer.scrollBy({ left: 300, behavior: 'smooth' });
 });
 
+// Navigatie-link naar favorieten
+document.querySelector('.nav-menu .nav-link[href="#favorieten"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('favorieten').scrollIntoView({ behavior: 'smooth' });
+  laadFavorieten();
+});
 

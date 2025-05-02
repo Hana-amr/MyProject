@@ -32,7 +32,7 @@ Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoe
 
 ## Implementatie van technische vereisten 
 
-
+- **addeventListener** wordt op meerdere plaatsen gebruikt om interactie met de pagina mogelijk te maken, zoals bij het klikken op de zoekknop, sterknoppen voor favorieten en de navigatieknoppen voor het scrollen.
 - lijn 3: Haalt de waarde van de zoekbalk op en zet deze om naar kleine letters voor een case-insensitieve zoekfunctie. 
 - Lijn 4, 5, 6: Haalt de geselecteerde waarde op uit de filters voor status, soort en geslacht via hun respectieve ID's.
 - Lijn 8, 9: **fetch()** haalt gegevens op van de Rick and Morty API. De **.then(response => response.json())** zet de ontvangen JSON-data om naar een JavaScript object.
@@ -42,7 +42,6 @@ Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoe
 - Favorieten worden opgeslagen in **localStorage**, zodat ze tussen sessies behouden blijven, zelfs als de gebruiker de pagina herlaadt.
 - Lijn 140: De knoppen voor scrollen naar links en rechts verschuiven de kaarten binnen de container door de **ScrollBy()** methode te gebruiken.
 - Bij klikken op de **favorieten link** in het **navigatiemenu**, wordt de gebuiker naar de favorieten sectie geleid en woren de favorieten opnieuw geladen.
-- **addeventListener** wordt op meerdere plaatsen gebruikt om interactie met de pagina mogelijk te maken, zoals bij het klikken op de zoekknop, sterknoppen voor favorieten en de navigatieknoppen voor het scrollen.
 
 ## Installatiehandleiding 
 

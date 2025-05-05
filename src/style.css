@@ -325,6 +325,16 @@ body {
   margin: 55px;
   color: white;
   padding-left: 50px;
+  padding-top: 20px;
+}
+
+
+#geenFavorieten {
+  color:red;
+  align-items: center;
+  padding-left:50px;
+  margin-left: 50px;
+  padding-bottom: 20px;
 }
 
 .star-btn {
@@ -370,18 +380,7 @@ body {
   padding: 10px;
 }
 
-#favorieten {
-  padding: 20px;
-  margin-top: 50px;
-  max-width: 100%;
-  overflow-x: auto;
-}
 
-#geenFavorieten {
-  color:red;
-  align-items: center;
-  padding-left: 500px;
-}
 
 /*Footer*/
 
@@ -390,6 +389,14 @@ body {
   color: white;
   text-align: center;
   padding: 1em 0;
+}
+
+#backtotop a{
+  padding-left: 20px;
+}
+
+#backtotop :active{
+  color: aquamarine;
 }
 
 
@@ -417,3 +424,4 @@ body {
   }
   
 }
+

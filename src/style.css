@@ -196,6 +196,22 @@ header .navigatiebalk{
   font-size: 1.12rem;
 }
 
+.contact {
+  display: inline-block;
+  color:lightblue;
+  background-color: white;
+  padding:20px;
+  border-radius:25px;
+  margin-top: 20px;
+  margin-left: 260px;
+  text-align: center;
+}
+
+.contact:hover {
+  background-color: lightblue;
+  color:black;
+
+}
 /*Zoekbalk*/
 
 .search-bar {

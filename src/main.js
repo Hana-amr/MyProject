@@ -1,15 +1,29 @@
+
+
 //Zoekbalk 
 document.getElementById('searchbutton').addEventListener('click', () => {
   const name = document.getElementById('searchInput').value.toLowerCase();
   const status = document.getElementById('statusFilter').value;
   const species = document.getElementById('speciesFilter').value;
-  const gender = document.getElementById('Gender').value;
-//Data ophalen van de API
-  fetch('https://rickandmortyapi.com/api/character')
+  const gender = document.getElementById('gender').value;
+
+  const urls = [
+    'https://rickandmortyapi.com/api/character?page=1',
+    'https://rickandmortyapi.com/api/character?page=2',
+    'https://rickandmortyapi.com/api/character?page=3'
+
+  ];
+
+//Data ophalen van de API 20 personages
+  /*fetch('https://rickandmortyapi.com/api/character')
     .then(response => response.json())
     .then(data => {
-      let characters = data.results;
+      let characters = data.results;*/
 
+      Promise.all(urls.map(url => fetch(url).then(res => res.json())))
+      .then(results => {
+        let characters = results.flatMap(data => data.results);
+      
       // Kunnen Filteren 
       characters = characters.filter(character => {
         const matchesName = character.name.toLowerCase().includes(name);
@@ -43,7 +57,6 @@ document.getElementById('searchbutton').addEventListener('click', () => {
 window.addEventListener('load', () => {
   document.getElementById('searchbutton').click();
 });
-
 /*kaartweergave + Favorieten met sterretje */
 const cardContainer = document.getElementById('cardContainer');
 const favorietenContainer = document.getElementById('favorietenContainer');

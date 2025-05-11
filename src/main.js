@@ -65,12 +65,26 @@ const geenMelding = document.getElementById('geenFavorieten');
 let alleCharacters = [];
 
 //Data ophalen: Fetch alle personages bij pagina laden
-fetch('https://rickandmortyapi.com/api/character')
+/*fetch('https://rickandmortyapi.com/api/character')
   .then(res => res.json())
   .then(data => {
     alleCharacters = data.results;
     toonAlleKaarten();
-  });
+  });*/
+
+  const urls = [
+    'https://rickandmortyapi.com/api/character?page=1',
+    'https://rickandmortyapi.com/api/character?page=2',
+    'https://rickandmortyapi.com/api/character?page=3'
+
+  ];
+
+  Promise.all(urls.map(url => fetch(url).then(res => res.json())))
+  .then(results => {
+     alleCharacters = results.flatMap(data => data.results);
+    toonAlleKaarten();
+  })
+  .catch(error => console.error('Fout bij ophalen data:', error));
 
 // Toon alle kaarten in scrollbare container
 function toonAlleKaarten() {

@@ -1,16 +1,16 @@
 # Projectbeschrijving
 
 Dit project is een interactieve single-page webapplicatie gebaseerd op de Rick and Morty API. De applicatie toont personages op een visueel aantrekkelijke tabel en kaartweergave. Gebruikers kunnen gegevens filteren op status, soort en geslacht via dropdownmenu’s. 
-Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages.
+Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages. Deze favorieten verschijnen wanneer de gebruiker op 'Favorieten' drukt in de navigatiebalk.
 
 
 ## Functionaliteiten
 
 ### Dataverzameling & -weergave (bestand main.js)
 - Data wordt opgehaald via de officiële [Rick and Morty API](https://rickandmortyapi.com/api/character)
-- Minstens 20 personages worden opgehaald
+- Er worden drie paginas opgehaald
 - Gegevens worden in zowel in een **tabel** als in een **kaartweergave** gepresenteerd.
-- Tabel toont: Afbeelding, Naam, Status Soort, Geslacht, Locatie.
+- Tabel toont: Afbeelding, Naam, Status Soort, Geslacht en Locatie.
 - Scrollbare kaartweergave met afbeeldingen en sterknoppen (voor favorieten)
 
 ### Interactiviteit

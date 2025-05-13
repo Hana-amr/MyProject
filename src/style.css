@@ -49,7 +49,7 @@ button {
   margin: 10px auto 0;
   display: block;
   border-radius: 8px;
-  background-color: darkblue;
+  background-color: lightgreen;
 
 }
 
@@ -209,7 +209,6 @@ header .navigatiebalk{
 }
 
 .ContactMe:hover {
-  background-color: lightblue;
   color:white;
 
 }
@@ -519,7 +518,3 @@ form textarea{
   
 }*/
 
-@media (max-width: 768px) {
-
-  
-}

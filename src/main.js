@@ -93,6 +93,8 @@ function toonAlleKaarten() {
     const kaart = maakKaart(character);
     cardContainer.appendChild(kaart);
   });
+  //observer activeren
+  observeerFavorietKnoppen();
 }
 
 // Maak een kaartje met sterknop
@@ -179,3 +181,23 @@ document.querySelector('.nav-menu .nav-link[href="#favorieten"]').addEventListen
   laadFavorieten();
 });
 
+//OBSERVER API
+
+// Observer: detecteer als een kaart 'favoriet' wordt in de console
+const kaartObserver = new MutationObserver((mutaties) => {
+  mutaties.forEach((mutatie) => {
+    if (mutatie.type === 'attributes' && mutatie.attributeName === 'class') {
+      const knop = mutatie.target;
+      const id = knop.getAttribute('data-id');
+      const isFavoriet = knop.classList.contains('favoriet');
+      console.log(`Kaart ${id} is ${isFavoriet ? 'toegevoegd aan' : 'verwijderd uit'} favorieten.`);
+    }
+  });
+});
+
+function observeerFavorietKnoppen() {
+  const knoppen = document.querySelectorAll('.star-btn');
+  knoppen.forEach(knop => {
+    kaartObserver.observe(knop, { attributes: true });
+  });
+}

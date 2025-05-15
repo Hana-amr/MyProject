@@ -1,5 +1,4 @@
 
-
 //Zoekbalk 
 document.getElementById('searchbutton').addEventListener('click', () => {
   const name = document.getElementById('searchInput').value.toLowerCase();
@@ -14,11 +13,6 @@ document.getElementById('searchbutton').addEventListener('click', () => {
 
   ];
 
-//Data ophalen van de API 20 personages
-  /*fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => {
-      let characters = data.results;*/
 
       Promise.all(urls.map(url => fetch(url).then(res => res.json())))
       .then(results => {
@@ -64,13 +58,6 @@ const geenMelding = document.getElementById('geenFavorieten');
 
 let alleCharacters = [];
 
-//Data ophalen: Fetch alle personages bij pagina laden
-/*fetch('https://rickandmortyapi.com/api/character')
-  .then(res => res.json())
-  .then(data => {
-    alleCharacters = data.results;
-    toonAlleKaarten();
-  });*/
 
   const urls = [
     'https://rickandmortyapi.com/api/character?page=1',
@@ -180,6 +167,9 @@ document.querySelector('.nav-menu .nav-link[href="#favorieten"]').addEventListen
   document.getElementById('favorieten').scrollIntoView({ behavior: 'smooth' });
   laadFavorieten();
 });
+
+
+
 
 //OBSERVER API
 

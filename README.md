@@ -1,55 +1,127 @@
 # Projectbeschrijving
 
-Dit project is een interactieve single-page webapplicatie gebaseerd op de Rick and Morty API. De applicatie toont personages op een visueel aantrekkelijke tabel en kaartweergave. Gebruikers kunnen gegevens filteren op status, soort en geslacht via dropdownmenu’s. 
-Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages. Deze favorieten verschijnen wanneer de gebruiker op 'Favorieten' drukt in de navigatiebalk.
+Dit project is een interactieve single-page webapplicatie, gebaseerd op de Rick and Morty API. De applicatie toont personages in een overzichtelijke en visueel aantrekkelijke tabel en kaartweergave. Gebruikers kunnen personages filteren op status, soort en geslacht via dropdownmenu’s. 
+
+Daarnaast kunnen gebruikers via de kaartweergave personages selecteren en toevoegen aan hun favorietenlijst, zodat ze snel toegang hebben tot hun favoriete personages. Deze favorieten worden zichtbaar zodra de gebruiker in de navigatiebalk op 'Favorieten' klikt.
+
+Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de knop in de 'About-sectie' of door in de navigatiebalk op 'Contact' te klikken.
 
 
 ## Functionaliteiten
 
-### Dataverzameling & -weergave (bestand main.js)
+### 1.Dataverzameling & -weergave (bestand main.js)
 - Data wordt opgehaald via de officiële [Rick and Morty API](https://rickandmortyapi.com/api/character)
 - Er worden drie paginas opgehaald
 - Gegevens worden in zowel in een **tabel** als in een **kaartweergave** gepresenteerd.
-- Tabel toont: Afbeelding, Naam, Status Soort, Geslacht en Locatie.
+- Tabel toont: Afbeelding, Naam, Status Soort, Geslacht en Locatie( 6 elementen).
 - Scrollbare kaartweergave met afbeeldingen en sterknoppen (voor favorieten)
 
-### Interactiviteit
+### 2.Interactiviteit
 - **Filterfunctionaliteit:**(naam, status, soort en geslacht).
 - **Zoekfuntie:** Naam van de personage opzoeken.
 - **Sorteermogelijkheden:** Sorteer indirect via filters en selecties
-- Resulaten worden automatisch bijgewerkt op basis can zoek- / filtercriteria
+- Resulaten worden automatisch bijgewerkt op basis van zoek- / filtercriteria
 
-### Personalisatie
-- Gebruikers kunnen **favorieten** opslaan via een sterknop op elk kaartje.
+### 3.Personalisatie
+- Gebruikers kunnen **favoriete kaartjes** opslaan via een sterknop op elk kaartje.
 - Favorieten worden **lokaal opgeslagen** in 'localStorage' en blijven behouden tussen sessies.
 - Wanneer je op menu-item "Favorieten" drukt krijg je je favoriete kaartjes te zien.
+- Gebruikers kunnen contact nemen via de knop in de 'About-sectie' of door in de navigatiebalk op 'Contact' te klikken. (Visueel werkt niet!)
 
+### 4.Gebruikerservaring:  
+#### Visueel aantrekkelijke interface
+- Gebruik van kleuren.
+- Gebruik van emoji's bij kaartjes.
+
+#### Gebruiksvriendelijke navigatie 
+- Zoekbalk met filters makkelijk te gebruiken.
+- Alle delen op de website toegangkelijk via navigatiebalk (je hoeft niet te scrollen).
 
 ## Gebruikte API's met links 
-**Rick and Morty API:**(https://rickandmortyapi.com/documentation/#episode-schema) 
-- **Personages:** (https://rickandmortyapi.com/api/character)
+**Rick and Morty API:** [(https://rickandmortyapi.com/)]
+- **Personages:** 3 paginas: [(https://rickandmortyapi.com/api/character)]
 
 
 ## Implementatie van technische vereisten 
 
-- **addeventListener** wordt op meerdere plaatsen gebruikt om interactie met de pagina mogelijk te maken, zoals bij het klikken op de zoekknop, sterknoppen voor favorieten en de navigatieknoppen voor het scrollen.
-- lijn 3: Haalt de waarde van de zoekbalk op en zet deze om naar kleine letters voor een case-insensitieve zoekfunctie. 
-- Lijn 4, 5, 6: Haalt de geselecteerde waarde op uit de filters voor status, soort en geslacht via hun respectieve ID's.
-- Lijn 8, 9: **fetch()** haalt gegevens op van de Rick and Morty API. De **.then(response => response.json())** zet de ontvangen JSON-data om naar een JavaScript object.
-- Lijn 52: Alle karakters worden opgehaald van de API en opgeslagen in een array **alleCharacters**. Elke karakter wordt in een kaart weergegeven.
-- De gefilterde karakters worden weergegeven in een **HTML-tabel**. Voor elk karakter worden gegevens(afbeelding, naam, status, soort, geslacht, locatie) in een nieuwe rij geplaatst.
-- lijn 100: **toggleFavorite()** voegt het karakter toe of verwijdert het uit de favorietenlijst, opgeslagen in **localStorage**. Bij het laden van de favorieten worden deze uit de **localStorage** gehaald en getoond in een aparte favoriten sectie.
-- Favorieten worden opgeslagen in **localStorage**, zodat ze tussen sessies behouden blijven, zelfs als de gebruiker de pagina herlaadt.
-- Lijn 140: De knoppen voor scrollen naar links en rechts verschuiven de kaarten binnen de container door de **ScrollBy()** methode te gebruiken.
-- Bij klikken op de **favorieten link** in het **navigatiemenu**, wordt de gebuiker naar de favorieten sectie geleid en woren de favorieten opnieuw geladen.
+### 1.DOM manipulatie
+
+#### Elementen selecteren 
+- Regels 7-14:
+- Doel: Selecteert elementen om ze later te manipuleren.
+
+#### Elementen manipuleren
+- Regel(s) 74 en 80-88:
+- Doel: Werkt de tabel bij met zoekresultaten.
+
+#### Events aan elementen koppelen
+- Regel 4 en 126:
+- Doel: Koppelt de zoekfunctie aan een klik-event.
+
+### 2.Modern JavaScript
+#### Gebruik van constanten
+- Regels 22-23:
+- Doel: Definieert onveranderkijke variabelen.
+
+#### Template literals
+- Regels 80-86 en 116-120:
+- Doel: Dynamische strings met variabelen.
+
+#### Iteratie over arrays
+- Regels 33-35, 78-88, 101-103:
+- Doel: data verwerken, filteren en weergeven. 
+
+#### Array methodes
+- Regel 30 en 58:
+- Maakt een array van URLs met **Array.form**.
+
+#### Arrow functions
+- Regels 30, 58-63 en 126:
+- Doel: Anonieme functies coor array-operaties.
+
+#### Ternary Operator
+- Regels 119:
+- Doel: Conditionele weergave van emoji's.
+
+#### Callback functions
+- Regels 4, 126 en 78: 
+- Doel: Een functie doorgeven als argument om later uit te voeren.
+
+#### Promises
+- Regels 31, 37:
+- Doel: Asynchrone operaties (hier API-calls) afhandelen zoner de hoofdthrad te blokkeren.
+
+#### Async & Await
+- Regels 28-37:
+- Doel: Asynchrone API-calls.
+
+#### Observer API (1 is voldoende)
+- Regels 227-233:
+- Doel: Houdt wijzigingen in favorieten bij.
+
+### 3.Data & API
+
+#### Fetch om data op te halen
+- Regel 31:
+- Doel: Haalt data op van de API.
+
+#### JSON manipuleren en weergeven
+- Regel 37 en 133:
+- Doel: Converteert responses naar JSON
+
+#### 4.Opslag
+
+#### Gebruik van LocalStorage 
+- Regels 149:
+- Doel: slaat favorieten op
 
 ## Installatiehandleiding 
 
 - Geen instalatie vereist, site gewoon in een moderne webbrowser openen.
 
-## Screenshots van de applicatie 
+
 
 ## Bronnen: 
-[naam van de site] (link)
+[W3schools] [(https://www.w3schools.com/cssref/css_colors.php)]
 
 

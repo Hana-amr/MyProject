@@ -1,80 +1,78 @@
+import './style.css'
 
-// Alle DOM elementen
+//Zoekbalk 
+document.getElementById('searchbutton').addEventListener('click', performSearch);
 
-const searchbutton = document.getElementById('searchbutton');
+// DOM elementen
 const searchInput = document.getElementById('searchInput');
 const statusFilter = document.getElementById('statusFilter');
 const speciesFilter = document.getElementById('speciesFilter');
-const genderFilter = document.getElementById('genderFilter');
-const tableBody  = document.getElementById('table-body');
-const cardContainer  = document.getElementById('cardContainer');
-const favorietenContainer  = document.getElementById('favorietenContainer');
-const geenMelding   = document.getElementById('geenMelding ');
+const genderFilter = document.getElementById('gender');
+const tableBody = document.getElementById('table-body');
+const cardContainer = document.getElementById('cardContainer');
+const favorietenContainer = document.getElementById('favorietenContainer');
+const geenMelding = document.getElementById('geenFavorieten');
 
-// kaarten en favorieten
-
+// Kaarten en favorieten
 const scrollLinks = document.getElementById('scrollLinks');
 const scrollRechts = document.getElementById('scrollRechts');
 const favorietenLink = document.querySelector('.nav-menu .nav-link[href="#favorieten"]');
 
-//API 
-
+// Configuratie
 const apiBaseUrl = 'https://rickandmortyapi.com/api/character';
 const pagesToFetch = 3;
+
 let alleCharacters = [];
 
-//Data ophalen van de API meerdere pagina's
-
-async function fetchCharacters(){
+//Data ophalen van de API (meerdere pagina's)
+async function fetchCharacters() {
   try {
-    const urls = Array.from({length: pagesToFetch}, (_,i) => `${apiBaseUrl}?page=${i +1}`);
+    const urls = Array.from({ length: pagesToFetch }, (_, i) => `${apiBaseUrl}?page=${i + 1}`);
     const responses = await Promise.all(urls.map(url => fetch(url)));
 
     for (const res of responses) {
-      if (!res.ok) throw new Error(`Fout bij ophalen (status: ${res.status})`)
+      if (!res.ok) throw new Error(`Fout bij ophalen (status: ${res.status})`);
     }
 
-  const data = await Promise.all(responses.map(res => res.json()));
-  return data.flatMap(page => page.results);
-
+    const data = await Promise.all(responses.map(res => res.json()));
+    return data.flatMap(page => page.results);
   } catch (err) {
-    console.error('Fout bij ophalen: ', err);
-    alert('Er is een fout opgetreden bij het ophalen van gegevens. ');
+    console.error('Fout bij ophalen data:', err);
+    alert('Er is een fout opgetreden bij het ophalen van gegevens.');
     return [];
   }
 }
 
-//Zoekfunctionaliteit
-
+// Zoekfunctionaliteit
 async function performSearch() {
+
   const name = searchInput.value.toLowerCase();
   const status = statusFilter.value;
   const species = speciesFilter.value;
   const gender = genderFilter.value;
 
-  if (alleCharacters.length === 0){
+  if (alleCharacters.length === 0) {
     alleCharacters = await fetchCharacters();
-
   }
+
   const filtered = alleCharacters.filter(character => {
     const matchesName = character.name.toLowerCase().includes(name);
     const matchesStatus = status === '' || character.status === status;
     const matchesSpecies = species === '' || character.species === species;
     const matchesGender = gender === '' || character.gender === gender;
     return matchesName && matchesStatus && matchesSpecies && matchesGender;
-
   });
+
   renderTable(filtered);
 }
 
-//Toon de resultaten in de tabel
-
+// Toon resultaten in tabel
 function renderTable(characters) {
   tableBody.innerHTML = '';
 
   if (characters.length === 0) {
     tableBody.innerHTML = '<tr><td colspan="6">Geen resultaten gevonden</td></tr>';
-    return; 
+    return;
   }
 
   characters.forEach(character => {
@@ -86,88 +84,16 @@ function renderTable(characters) {
       <td>${character.species}</td>
       <td>${character.gender}</td>
       <td>${character.location.name}</td>
-      `;
+    `;
     tableBody.appendChild(row);
   });
 }
 
-
-
-
-/*
-//Zoekbalk 
-document.getElementById('searchbutton').addEventListener('click', () => {
-  const name = document.getElementById('searchInput').value.toLowerCase();
-  const status = document.getElementById('statusFilter').value;
-  const species = document.getElementById('speciesFilter').value;
-  const gender = document.getElementById('gender').value;
-
-  const urls = [
-    'https://rickandmortyapi.com/api/character?page=1',
-    'https://rickandmortyapi.com/api/character?page=2',
-    'https://rickandmortyapi.com/api/character?page=3'
-
-  ];
-
-
-      Promise.all(urls.map(url => fetch(url).then(res => res.json())))
-      .then(results => {
-        let characters = results.flatMap(data => data.results);
-      
-      // Kunnen Filteren 
-      characters = characters.filter(character => {
-        const matchesName = character.name.toLowerCase().includes(name);
-        const matchesStatus = status === '' || character.status === status;
-        const matchesSpecies = species === '' || character.species === species;
-        const matchesGender = gender === '' || character.gender === gender;
-
-        return matchesName && matchesStatus && matchesSpecies && matchesGender;
-      });
-
-      // Tabel leegmaken en nieuwe resultaten tonen
-      const tableBody = document.getElementById('table-body');
-      tableBody.innerHTML = '';
-
-      characters.forEach(character => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <td><img src="${character.image}" alt="${character.name}" width="50"></td>
-          <td>${character.name}</td>
-          <td>${character.status}</td>
-          <td>${character.species}</td>
-          <td>${character.gender}</td>
-          <td>${character.location.name}</td>
-        `;
-        tableBody.appendChild(row);
-      });
-    })
-    .catch(error => console.error('Fout bij ophalen data:', error));
-});
-
-window.addEventListener('load', () => {
-  document.getElementById('searchbutton').click();
-});
-kaartweergave + Favorieten met sterretje 
-const cardContainer = document.getElementById('cardContainer');
-const favorietenContainer = document.getElementById('favorietenContainer');
-const geenMelding = document.getElementById('geenFavorieten');
-
-let alleCharacters = [];
-
-
-  const urls = [
-    'https://rickandmortyapi.com/api/character?page=1',
-    'https://rickandmortyapi.com/api/character?page=2',
-    'https://rickandmortyapi.com/api/character?page=3'
-
-  ];
-
-  Promise.all(urls.map(url => fetch(url).then(res => res.json())))
-  .then(results => {
-     alleCharacters = results.flatMap(data => data.results);
-    toonAlleKaarten();
-  })
-  .catch(error => console.error('Fout bij ophalen data:', error));
+//Kaartweergave + Favorieten met sterretje
+async function initCards() {
+  alleCharacters = await fetchCharacters();
+  toonAlleKaarten();
+}
 
 // Toon alle kaarten in scrollbare container
 function toonAlleKaarten() {
@@ -176,8 +102,8 @@ function toonAlleKaarten() {
     const kaart = maakKaart(character);
     cardContainer.appendChild(kaart);
   });
-  //observer activeren
   observeerFavorietKnoppen();
+  updateAllStarButtons();
 }
 
 // Maak een kaartje met sterknop
@@ -190,7 +116,7 @@ function maakKaart(character) {
   card.innerHTML = `
     <img src="${character.image}" alt="${character.name}">
     <h3>${character.name}</h3>
-    <p>${character.species} - ${character.status}</p>
+    <p>${character.species} - ${character.status === 'Alive' ? '🌱' : '💀'} ${character.status}<p>
     <button class="star-btn ${isFav ? 'favoriet' : ''}" data-id="${character.id}">
       ★
     </button>
@@ -221,10 +147,27 @@ function toggleFavorite(id, button) {
   }
 
   localStorage.setItem('favorites', JSON.stringify(favs));
+
+  updateAllStarButtons();
+}
+
+//Sterretjes synchroniseren
+function updateAllStarButtons(){
+  const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+  const allButtons = document.querySelectorAll('.star-btn');
+
+  allButtons.forEach(button => {
+    const id = parseInt(button.getAttribute('data-id'), 10);
+    if (favs.includes(id)) {
+      button.classList.add('favoriet');
+    } else {
+      button.classList.remove('favoriet');
+    }
+  });
 }
 
 // Toont favorieten (bij klikken in menu)
-function laadFavorieten() {
+async function laadFavorieten() {
   favorietenContainer.innerHTML = '';
 
   const favs = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -236,40 +179,51 @@ function laadFavorieten() {
 
   geenMelding.style.display = 'none';
 
-  fetch(`https://rickandmortyapi.com/api/character/${favs.join(',')}`)
-    .then(res => res.json())
-    .then(data => {
-      const favoritesArray = Array.isArray(data) ? data : [data];
+  try {
+    const res = await fetch(`${apiBaseUrl}/${favs.join(',')}`);
+    if (!res.ok) throw new Error(`HTTP-fout ${res.status}`);
+    const data = await res.json();
+    const favoritesArray = Array.isArray(data) ? data : [data];
 
-      favoritesArray.forEach(character => {
-        const kaart = maakKaart(character);
-        favorietenContainer.appendChild(kaart);
-      });
+    favoritesArray.forEach(character => {
+      const kaart = maakKaart(character);
+      favorietenContainer.appendChild(kaart);
     });
+    observeerFavorietKnoppen();
+    updateAllStarButtons();
+
+  } catch (error) {
+    alert('Fout bij laden van favorieten.');
+    console.error(error);
+  }
 }
 
 // Scrollfunctionaliteit kaartjes
-document.getElementById('scrollLinks').addEventListener('click', () => {
+scrollLinks.addEventListener('click', () => {
   cardContainer.scrollBy({ left: -300, behavior: 'smooth' });
 });
 
-document.getElementById('scrollRechts').addEventListener('click', () => {
+scrollRechts.addEventListener('click', () => {
   cardContainer.scrollBy({ left: 300, behavior: 'smooth' });
 });
 
 // Navigatie-link naar favorieten
-document.querySelector('.nav-menu .nav-link[href="#favorieten"]').addEventListener('click', (e) => {
+favorietenLink.addEventListener('click', (e) => {
   e.preventDefault();
   document.getElementById('favorieten').scrollIntoView({ behavior: 'smooth' });
   laadFavorieten();
 });
 
-
+// Bij laden van de pagina
+window.addEventListener('load', () => {
+  document.getElementById('searchbutton').click();
+  initCards();
+});
 
 
 //OBSERVER API
 
-// Observer: detecteer als een kaart 'favoriet' wordt in de console
+// Observer: detecteer als een kaart 'favoriet' wordt in de console voor het debuggen van favorieten
 const kaartObserver = new MutationObserver((mutaties) => {
   mutaties.forEach((mutatie) => {
     if (mutatie.type === 'attributes' && mutatie.attributeName === 'class') {
@@ -287,4 +241,3 @@ function observeerFavorietKnoppen() {
     kaartObserver.observe(knop, { attributes: true });
   });
 }
-*/

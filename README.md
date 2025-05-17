@@ -9,7 +9,7 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 
 ## Functionaliteiten
 
-### 1.Dataverzameling & -weergave (bestand main.js)
+### 1.Dataverzameling & -weergave (main.js)
 - Data wordt opgehaald via de officiële [Rick and Morty API](https://rickandmortyapi.com/api/character)
 - Er worden drie paginas opgehaald
 - Gegevens worden in zowel in een **tabel** als in een **kaartweergave** gepresenteerd.
@@ -42,7 +42,7 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 - **Personages:** 3 paginas: https://rickandmortyapi.com/api/character
 
 
-## Implementatie van technische vereisten 
+## Implementatie van technische vereisten (main.js)
 
 ### 1.DOM manipulatie
 
@@ -124,4 +124,10 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 ## Bronnen: 
 - W3schools: https://www.w3schools.com/cssref/css_colors.php
 - Google fonts: https://fonts.google.com/
+- Google icons: https://fonts.google.com/icons 
+- Emoji's: https://getemoji.com/ 
+- Flexbox Frroggy: https://flexboxfroggy.com/#nl 
+- chatgpt: zie folder **AI chatlog**
+
+
 

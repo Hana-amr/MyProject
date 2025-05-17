@@ -38,8 +38,8 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 - Alle delen op de website toegangkelijk via navigatiebalk (je hoeft niet te scrollen).
 
 ## Gebruikte API's met links 
-**Rick and Morty API:** [(https://rickandmortyapi.com/)]
-- **Personages:** 3 paginas: [(https://rickandmortyapi.com/api/character)]
+**Rick and Morty API:** https://rickandmortyapi.com/
+- **Personages:** 3 paginas: https://rickandmortyapi.com/api/character
 
 
 ## Implementatie van technische vereisten 
@@ -51,7 +51,7 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 - Doel: Selecteert elementen om ze later te manipuleren.
 
 #### Elementen manipuleren
-- Regel(s) 74 en 80-88:
+- Regels 74 en 80-88:
 - Doel: Werkt de tabel bij met zoekresultaten.
 
 #### Events aan elementen koppelen
@@ -80,15 +80,15 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 - Doel: Anonieme functies coor array-operaties.
 
 #### Ternary Operator
-- Regels 119:
+- Regel 119:
 - Doel: Conditionele weergave van emoji's.
 
 #### Callback functions
-- Regels 4, 126 en 78: 
+- Regel 4, 126 en 78: 
 - Doel: Een functie doorgeven als argument om later uit te voeren.
 
 #### Promises
-- Regels 31, 37:
+- Regel 31 en 37:
 - Doel: Asynchrone operaties (hier API-calls) afhandelen zoner de hoofdthrad te blokkeren.
 
 #### Async & Await
@@ -112,7 +112,7 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 #### 4.Opslag
 
 #### Gebruik van LocalStorage 
-- Regels 149:
+- Regel 149:
 - Doel: slaat favorieten op
 
 ## Installatiehandleiding 
@@ -122,6 +122,6 @@ Mocht een gebruiker problemen ervaren, dan kan hij of zij contact nemen via de k
 
 
 ## Bronnen: 
-[W3schools] [(https://www.w3schools.com/cssref/css_colors.php)]
-
+- W3schools: https://www.w3schools.com/cssref/css_colors.php
+- Google fonts: https://fonts.google.com/
 

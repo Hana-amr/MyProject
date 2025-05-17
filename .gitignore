@@ -12,9 +12,9 @@ dist
 dist-ssr
 *.local
 
-public
-javascript.svg
-counter.js
+/public/
+/src/javascript.svg
+src/counter.js
 
 
 # Editor directories and files

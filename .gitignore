@@ -11,11 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+# Negeer 'public map
+public/
 
-/public/
-/src/javascript.svg
+# Negeer specifieke bestanden in 'src/'
 src/counter.js
-
+src/javascript.svg
 
 # Editor directories and files
 .vscode/*

@@ -66,6 +66,7 @@ async function performSearch() {
   renderTable(filtered);
 }
 
+
 // Toon resultaten in tabel
 function renderTable(characters) {
   tableBody.innerHTML = '';
@@ -116,7 +117,7 @@ function maakKaart(character) {
   card.innerHTML = `
     <img src="${character.image}" alt="${character.name}">
     <h3>${character.name}</h3>
-    <p>${character.species} - ${character.status === 'Alive' ? '🌱' : '💀'} ${character.status}<p>
+    <p>${character.species} - ${character.status === 'Alive' ? 'Alive 🌱' : character.status === 'Dead' ? 'Dead 💀' : 'unkown❓'}<p>
     <button class="star-btn ${isFav ? 'favoriet' : ''}" data-id="${character.id}">
       ★
     </button>
